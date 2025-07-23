@@ -1,0 +1,131 @@
+:root {
+  --primary: #1769aa;
+  --accent: #42a5f5;
+  --bg: #f6f8fb;
+  --surface: #fff;
+  --shadow: 0 6px 28px #1769aa16, 0 1.5px 4px #0001;
+  --radius: 1.2rem;
+  --success: #43a047;
+  --error: #e53935;
+  --text: #1a2235;
+  --muted: #7684a7;
+  --transition: .22s cubic-bezier(.57,.13,.42,.84);
+}
+
+body {
+  background: linear-gradient(120deg, #f6f8fb 65%, #d9e7fa 100%);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  color: var(--text);
+}
+.corporate-shell {
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.corporate-card {
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  min-width: 340px;
+  padding: 2.5rem 2rem 2.7rem 2rem;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.home-card {
+  max-width: 500px;
+}
+
+.corporate-title {
+  text-align: center;
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.corporate-btn-group {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.corporate-btn {
+  border: none;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: .8rem;
+  color: #fff;
+  font-size: 1.1rem;
+  font-family: inherit;
+  font-weight: 600;
+  padding: 1rem 2.4rem;
+  box-shadow: 0 0.35rem 1rem #1769aa15;
+  cursor: pointer;
+  transition: box-shadow var(--transition), filter var(--transition);
+}
+.corporate-btn:focus, .corporate-btn:hover {
+  filter: brightness(1.06) saturate(1.15);
+  box-shadow: 0 1.3rem 2.1rem #1769aa33;
+  outline: none;
+}
+
+.visual-hero {
+  width: 170px;
+  margin: 0 auto 1.6rem auto;
+  display: block;
+}
+.visual-small {
+  width: 70px;
+  margin: 0 auto 1.1rem auto;
+  display: block;
+  border-radius: 24%;
+  background: linear-gradient(120deg, #d0eaff 55%, #fff7e6 100%);
+}
+
+.corporate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+.corporate-label {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: .4rem;
+  margin-left: .14rem;
+}
+.corporate-input {
+  padding: 1rem 1.1rem;
+  border: 1.7px solid #dbe8f5;
+  border-radius: .7rem;
+  font-size: 1.08em;
+  font-family: inherit;
+  background: #f3f7fc;
+  color: var(--text);
+  transition: border var(--transition), box-shadow var(--transition);
+}
+.corporate-input:focus {
+  border: 1.7px solid var(--accent);
+  box-shadow: 0 0 8px 2px #b3e5fc60;
+  background: #fff;
+  outline: none;
+}
+.corporate-message {
+  margin-top: 1em;
+  border-radius: 0.5em;
+  padding: .8em 1em;
+  text-align: center;
+  font-size: 1.06em;
+}
+.corporate-message.success {
+  color: var(--success);
+  background: #ebf5ea;
+}
+.corporate-message.error {
+  color: var(--error);
+  background: #ffecec;
+}

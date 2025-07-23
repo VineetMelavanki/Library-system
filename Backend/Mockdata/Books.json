@@ -1,0 +1,20 @@
+[
+  {
+    "Title": "Clean Code",
+    "Author": "Robert C. Martin",
+    "publishedDate": 2008,
+    "CopiesAvailable": 5
+  },
+  {
+    "Title": "Introduction to Algorithms",
+    "Author": "Thomas H. Cormen",
+    "publishedDate": 2009,
+    "CopiesAvailable": 3
+  },
+  {
+    "Title": "JavaScript: The Good Parts",
+    "Author": "Douglas Crockford",
+    "publishedDate": 2008,
+    "CopiesAvailable": 2
+  }
+]
