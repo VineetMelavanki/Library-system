@@ -1,0 +1,30 @@
+name: Gemini AI Code Review
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Gemini CLI
+        run: npm install -g @google/gemini-cli
+
+      - name: Authenticate Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY}}
+        run: echo "Authentication will be done using secret API key"
+
+      - name: Run Gemini Analysis
+        run: gemini -p "Review the code for bugs, vulnerabilities, and improvements" --all-files
