@@ -10,28 +10,19 @@ jobs:
   review:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout your code
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Set up Node.js (required for Gemini CLI)
       - name: Set up Node.js 20
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      # Step 3: Install Gemini CLI globally
       - name: Install Gemini CLI
         run: npm install -g @google/gemini-cli
 
-      # Step 4: Verify Gemini CLI was installed correctly
-      - name: Check Gemini CLI version
-        run: gemini --version
-
-      # Step 5: Write API Key to .env file (improves reliability of key detection)
-      - name: Write API key to .env
-        run: echo "gemini_api_key=${{ secrets.GEMINI_API_KEY }}" > .env
-
-      # Step 6: Run Gemini Analysis
       - name: Run Gemini Analysis
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: gemini -p "Review the code for bugs, vulnerabilities, and improvements" --all-files
+
