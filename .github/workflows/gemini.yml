@@ -13,15 +13,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js 20
-        uses: actions/setup-node@v3
+      - name: Run Gemini AI Analysis
+        uses: google-github-actions/run-gemini-cli@v1
         with:
-          node-version: 20
+          gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
+          prompt: "Review the code for bugs, vulnerabilities, and improvements"
 
-      - name: Install Gemini CLI
-        run: npm install -g @google/gemini-cli
-
-      - name: Run Gemini Analysis
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: gemini -p "Review the code for bugs, vulnerabilities, and improvements" --all-files
