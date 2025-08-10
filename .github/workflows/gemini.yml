@@ -21,10 +21,7 @@ jobs:
       - name: Install Gemini CLI
         run: npm install -g @google/gemini-cli
 
-      - name: Authenticate Gemini
+      - name: Run Gemini Analysis
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: gemini -p "Review the code for bugs, vulnerabilities, and improvements" --all-files
-
-      - name: Run Gemini Analysis
         run: gemini -p "Review the code for bugs, vulnerabilities, and improvements" --all-files
